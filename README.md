@@ -1,23 +1,23 @@
-gcm
+FCM
 ===
 
-The Android SDK provides a nice convenience library ([com.google.android.gcm.server](https://github.com/google/gcm/tree/master/client-libraries/java/rest-client/src/com/google/android/gcm/server)) that greatly simplifies the interaction between Java-based application servers and Google's GCM servers. However, Google has not provided much support for application servers implemented in languages other than Java, specifically those written in the Go programming language. The `gcm` package helps to fill in this gap, providing a simple interface for sending GCM messages and automatically retrying requests in case of service unavailability.
+This library can be used to send FCM messages (notifications) to Android and iOS clients which are using Firebase Notification Library.  
+It is backward compatible with GCM. You can transparently use GCM token instead of FCM token to send Notification to clients which are using old Google Cloud Messaging library.  
 
-Documentation: http://godoc.org/github.com/alexjlockwood/gcm
 
 Getting Started
 ---------------
 
-To install gcm, use `go get`:
+To install go-fcm, use `go get`:
 
 ```bash
-go get github.com/alexjlockwood/gcm
+go get github.com/therahulprasad/go-fcm
 ```
 
 Import gcm with the following:
 
 ```go
-import "github.com/alexjlockwood/gcm"
+import "github.com/therahulprasad/go-fcm"
 ```
 
 Sample Usage
@@ -32,7 +32,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/alexjlockwood/gcm"
+	"github.com/therahulprasad/go-fcm"
 )
 
 func main() {
@@ -67,7 +67,7 @@ import (
 	"appengine"
 	"appengine/urlfetch"
 
-	"github.com/alexjlockwood/gcm"
+	"github.com/therahulprasad/go-fcm"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
